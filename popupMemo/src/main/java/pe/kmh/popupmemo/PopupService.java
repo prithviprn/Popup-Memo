@@ -38,7 +38,8 @@ public class PopupService extends Service {
         Intent i = new Intent(getApplicationContext(), PopupScreen.class);
         PendingIntent pIntent = PendingIntent.getActivity(getApplicationContext(), 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
         builder.setContentIntent(pIntent);
-        manager.notify(1, builder.build());
+        if (android.os.Build.VERSION.SDK_INT < 16) manager.notify(1, builder.getNotification());
+        else manager.notify(1, builder.build());
         return START_STICKY;
     }
 }
