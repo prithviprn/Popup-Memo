@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Popup Memo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="no_notes">No Notes Yet</string>
+    <string name="menu_insert">Add Note</string>
+    <string name="menu_delete">Delete Note</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+    <string name="confirm">Save</string>
+    <string name="edit_note">Edit Note</string>
+    <string name="saved">Saved.</string>
+    <string name="notification_mes">To start Memo, Click This</string>
+    <string name="share">Share</string>
+    <string name="send_to">Send Memo to..</string>
+    <string name="nobody">There is nothing.</string>
+    <string name="refresh">Refresh</string>
+    <string name="setting">Setting</string>
+    <string name="touchoutsidetosave">Touch outside to save memo.</string>
+    <string name="backtooff">Touch \'back\' again to close app.</string>
+
+    <!-- Setting -->
+    <string name="setting_title">PopupMemo Setting</string>
+    <string name="memosetting_title">Memo Setting</string>
+    <string name="colorsetting_title">Memo Color</string>
+    <string name="colorsetting_summary">Change color of Memo</string>
+
+    <!-- Color -->
+    <string name="Yellow">Yellow</string>
+    <string name="Pink">Pink</string>
+    <string name="Blue">Blue</string>
+    <string name="Green">Green</string>
+    <string name="White">White</string>
+    <string name="Red">Red</string>
+    <string name="Purple">Purple</string>
+    <string name="Cyan">Cyan</string>
+</resources>

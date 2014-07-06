@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="pe.kmh.popupmemo"
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:versionCode="1"
+          android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="pe.kmh.popupmemo.NoteMain"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="pe.kmh.popupmemo.NoteEdit"/>
+        <activity
+            android:name="pe.kmh.popupmemo.PopupScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Dialog"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity
+            android:name=".PreferenceScreen"
+            android:label="@string/setting_title"/>
+
+        <service android:name=".PopupService">
+            <intent-filter>
+                <action android:name="angeloid.popupmeno.PopupService"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name="pe.kmh.popupmemo.PopupReceiver"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </receiver>
+        <meta-data android:name="com.crashlytics.ApiKey" android:value="4c3854ec06c45b420682d3bb17779110c1354b2f"/>
+    </application>
+
+</manifest>

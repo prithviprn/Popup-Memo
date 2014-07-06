@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="color">
+        <item>@string/Yellow</item>
+        <item>@string/Pink</item>
+        <item>@string/Blue</item>
+        <item>@string/Green</item>
+        <item>@string/White</item>
+        <item>@string/Red</item>
+        <item>@string/Purple</item>
+        <item>@string/Cyan</item>
+    </string-array>
+    <string-array name="color_values">
+        <item>#ffff99</item>
+        <item>#ffd9f4</item>
+        <item>#d7def1</item>
+        <item>#ccffcc</item>
+        <item>#ffffff</item>
+        <item>#ffcccc</item>
+        <item>#fdccff</item>
+        <item>#ccfffe</item>
+    </string-array>
+
+</resources>

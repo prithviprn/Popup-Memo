@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_new"
+        android:icon="@drawable/ic_new"
+        android:showAsAction="ifRoom"
+        android:title="@string/menu_insert"/>
+    <item
+        android:id="@+id/action_refresh"
+        android:icon="@drawable/refresh"
+        android:showAsAction="ifRoom"
+        android:title="@string/refresh"/>
+    <item
+        android:id="@+id/action_setting"
+        android:icon="@drawable/setting"
+        android:showAsAction="ifRoom"
+        android:title="@string/setting"/>
+
+</menu>
