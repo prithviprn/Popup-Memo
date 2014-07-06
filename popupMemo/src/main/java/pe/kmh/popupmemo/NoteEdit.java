@@ -1,10 +1,10 @@
 package pe.kmh.popupmemo;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -55,14 +55,7 @@ public class NoteEdit extends Activity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        saveState();
         outState.putSerializable(NotesDbAdapter.KEY_ROWID, mRowId);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        saveState();
     }
 
     @Override
@@ -76,7 +69,6 @@ public class NoteEdit extends Activity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.edit, menu);
         return true;
-
     }
 
     @Override
@@ -87,17 +79,12 @@ public class NoteEdit extends Activity {
             finish();
         } else if (id == R.id.action_save) {
             saveState();
-            Toast toast = Toast.makeText(this, R.string.nobody,
-                Toast.LENGTH_SHORT);
-            toast.show();
         } else if (id == R.id.menu_share) {
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, mBodyText.getText()
-                .toString());
+            sendIntent.putExtra(Intent.EXTRA_TEXT, mBodyText.getText().toString());
             sendIntent.setType("text/plain");
-            startActivity(Intent.createChooser(sendIntent, getResources()
-                .getText(R.string.send_to)));
+            startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
         }
         return super.onOptionsItemSelected(item);
     }
@@ -107,16 +94,12 @@ public class NoteEdit extends Activity {
             long id = mDbHelper.createNote(title, body);
             if (id > 0) {
                 mRowId = id;
-                Toast toast = Toast.makeText(this, R.string.saved,
-                    Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
                 finish();
             }
         } else {
             mDbHelper.updateNote(mRowId, title, body);
-            Toast toast = Toast.makeText(this, R.string.saved,
-                Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
             finish();
         }
     }
@@ -125,7 +108,7 @@ public class NoteEdit extends Activity {
         body = mBodyText.getText().toString();
         title = mTitleText.getText().toString();
         if (body.length() == 0) { // 내용을 입력 안했을때
-
+            Toast.makeText(this, R.string.nobody, Toast.LENGTH_SHORT).show();
         } else { // 내용을 입력했을 때
             if (title.length() == 0) { // 제목을 입력 안했을 때
                 if (body.length() > 15) { // 내용이 15자 이상일 경우
@@ -140,7 +123,6 @@ public class NoteEdit extends Activity {
             } else { // 제목과 내용을 전부 입력했을 때
                 saveMemo();
             }
-
         }
     }
 }

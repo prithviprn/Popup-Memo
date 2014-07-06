@@ -5,7 +5,6 @@ import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -26,7 +25,6 @@ public class PopupScreen extends PopupActivity {
         WindowBuild();
         mDbHelper = new NotesDbAdapter(this);
         mDbHelper.open();
-
 
         setContentView(R.layout.popupscreen);
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -78,13 +76,11 @@ public class PopupScreen extends PopupActivity {
             long id = mDbHelper.createNote(title, body);
             if (id > 0) {
                 mRowId = id;
-                Toast toast = Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT);
-                toast.show();
+                Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
             }
         } else {
             mDbHelper.updateNote(mRowId, title, body);
-            Toast toast = Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, R.string.saved, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -92,9 +88,7 @@ public class PopupScreen extends PopupActivity {
         body = mBodyText.getText().toString();
         title = body;
         if (body.length() == 0) { // 내용을 입력 안했을때
-            Toast toast = Toast.makeText(this, R.string.nobody,
-                Toast.LENGTH_SHORT);
-            toast.show();
+            Toast.makeText(this, R.string.nobody, Toast.LENGTH_SHORT).show();
         } else {
             if (body.length() > 15) { // 내용이 15자 이상일 경우
                 title = body.substring(0, 15) + "...";

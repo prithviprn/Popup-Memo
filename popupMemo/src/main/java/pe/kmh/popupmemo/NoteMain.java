@@ -45,7 +45,7 @@ public class NoteMain extends ListActivity {
         else
         {
             backPressedTime = tempTime;
-            Toast.makeText(getApplicationContext(), "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.backtooff, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -66,7 +66,6 @@ public class NoteMain extends ListActivity {
         }
         return true;
     }
-
 
     private void fillData() {
         Cursor notesCursor = mDbHelper.fetchAllNotes();
