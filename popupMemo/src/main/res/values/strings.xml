@@ -20,6 +20,7 @@
     <string name="setting">Setting</string>
     <string name="touchoutsidetosave">Touch outside to save memo.</string>
     <string name="backtooff">Touch \'back\' again to close app.</string>
+    <string name="advertisement">Click Ad to encourage developer!</string>
 
     <!-- Setting -->
     <string name="setting_title">PopupMemo Setting</string>

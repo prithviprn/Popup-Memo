@@ -2,10 +2,34 @@
 <pre-dex-items>
 
     <item
-        dex="D:\App\Android\PopupMemo\popupMemo\build\intermediates\pre-dexed\release\crashlytics-1.1.11-5c55b3219aac2b81c83745c7a46d3f2a8d223fdf.jar"
-        jar="D:\Personal\.gradle\caches\modules-2\files-2.1\com.crashlytics.android\crashlytics\1.1.11\b8189e9eef2f07fae743e05d7fe7e69daebe98d1\crashlytics-1.1.11.jar"
+        dex="D:\App\Android\PopupMemo\popupMemo\build\intermediates\pre-dexed\debug\internal_impl-20.0.0-efcda4853e6eab905c6c3682e95aecf10d456109.jar"
+        jar="D:\App\Android\PopupMemo\popupMemo\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\libs\internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d"/>
+    <item
+        dex="D:\App\Android\PopupMemo\popupMemo\build\intermediates\pre-dexed\debug\support-annotations-20.0.0-4b09205bb36472fe59a6594954bf8dbc60bd131b.jar"
+        jar="D:\App\Android_SDK\extras\android\m2repository\com\android\support\support-annotations\20.0.0\support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa"/>
+    <item
+        dex="D:\App\Android\PopupMemo\popupMemo\build\intermediates\pre-dexed\debug\classes-bc01a280737018ef7a7b0e122e52c4796ce045f1.jar"
+        jar="D:\App\Android\PopupMemo\popupMemo\build\intermediates\exploded-aar\com.android.support\support-v4\20.0.0\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0"/>
+    <item
+        dex="D:\App\Android\PopupMemo\popupMemo\build\intermediates\pre-dexed\debug\crashlytics-1.1.13-faa5555d5a8a7545dfa022580d6cfb00dfd3a583.jar"
+        jar="D:\Personal\.gradle\caches\modules-2\files-2.1\com.crashlytics.android\crashlytics\1.1.13\e821eafa1bf489a26bdb71f95078c26785b37a1\crashlytics-1.1.13.jar"
         jumboMode="false"
         revision="20.0.0"
-        sha1="b8189e9eef2f07fae743e05d7fe7e69daebe98d1"/>
+        sha1="0e821eafa1bf489a26bdb71f95078c26785b37a1"/>
+    <item
+        dex="D:\App\Android\PopupMemo\popupMemo\build\intermediates\pre-dexed\debug\classes-8fe2f0f9ad099aeb94a81c7e09f67a986fd50efc.jar"
+        jar="D:\App\Android\PopupMemo\popupMemo\build\intermediates\exploded-aar\com.google.android.gms\play-services\6.1.71\classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da"/>
 
 </pre-dex-items>

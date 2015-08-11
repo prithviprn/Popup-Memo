@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
-              android:background="#dcdcdc"
               android:orientation="horizontal">
+
+    <fragment
+        android:id="@+id/placeHolderView"
+        android:name="pe.kmh.popupmemo.NoteMain$PlaceholderFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <fragment
+        android:id="@+id/adFragment"
+        android:name="pe.kmh.popupmemo.NoteMain$AdFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_below="@id/placeHolderView" />
 
     <ListView
         android:id="@+id/android:list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/adFragment"
         android:background="#ffffff"/>
 
     <TextView
@@ -18,4 +32,4 @@
         android:gravity="center"
         android:textSize="30sp"
         android:text="@string/no_notes"/>
-</LinearLayout>
+</RelativeLayout>

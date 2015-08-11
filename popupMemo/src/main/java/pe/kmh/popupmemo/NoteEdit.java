@@ -107,22 +107,27 @@ public class NoteEdit extends Activity {
     private void saveState() {
         body = mBodyText.getText().toString();
         title = mTitleText.getText().toString();
-        if (body.length() == 0) { // 내용을 입력 안했을때
+
+        if (title.length() == 0 && body.length() == 0)  // 내용과 제목을 모두 입력 안했을때
             Toast.makeText(this, R.string.nobody, Toast.LENGTH_SHORT).show();
-        } else { // 내용을 입력했을 때
-            if (title.length() == 0) { // 제목을 입력 안했을 때
-                if (body.length() > 15) { // 내용이 15자 이상일 경우
-                    title = body.substring(0, 15) + "...";
-                    title = title.replaceAll("[\r\n]", ""); // 엔터값 제거
-                    saveMemo();
-                } else { // 내용이 15자 이하일 경우(StringIndexOutofBoundsException)
-                    title = body;
-                    title = title.replaceAll("[\r\n]", ""); // 엔터값 제거
-                    saveMemo();
-                }
-            } else { // 제목과 내용을 전부 입력했을 때
+
+        else if (title.length() == 0) {
+            if (body.length() > 15) { // 내용이 15자 이상일 경우
+                title = body.substring(0, 15) + "...";
+                title = title.replaceAll("[\r\n]", ""); // 엔터값 제거
+                saveMemo();
+            } else { // 내용이 15자 이하일 경우(StringIndexOutofBoundsException)
+                title = body;
+                title = title.replaceAll("[\r\n]", ""); // 엔터값 제거
                 saveMemo();
             }
         }
+
+        else if (body.length() == 0) {
+            body = title;
+            saveMemo();
+        }
+
+        else saveMemo();
     }
 }

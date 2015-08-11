@@ -5,11 +5,13 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.IBinder;
 
 public class PopupService extends Service {
 
     protected boolean mRunning;
+    private NotesDbAdapter mDbHelper;
 
     @Override
     public IBinder onBind(Intent intent) {

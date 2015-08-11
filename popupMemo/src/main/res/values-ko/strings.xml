@@ -17,6 +17,7 @@
     <string name="refresh">새로고침</string>
     <string name="touchoutsidetosave">메모 바깥쪽을 터치하면 저장됩니다.</string>
     <string name="backtooff">한 번 더 누르면 종료됩니다.</string>
+    <string name="advertisement">광고를 클릭해주시면 개발자에게 힘이 됩니다. ^^</string>
 
     <!-- Setting -->
     <string name="setting_title">설정</string>

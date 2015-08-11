@@ -13,7 +13,7 @@ public class PopupScreen extends PopupActivity {
 
     public String title;
     public String body;
-    private EditText mBodyText;
+    private EditText mTitleText, mBodyText;
     private Long mRowId;
     private NotesDbAdapter mDbHelper;
 
@@ -33,6 +33,7 @@ public class PopupScreen extends PopupActivity {
         pLayout.setBackgroundColor(Color.parseColor(color));
         Toast.makeText(getApplicationContext(), R.string.touchoutsidetosave, Toast.LENGTH_LONG).show();
         getLayout();
+        mTitleText = (EditText) findViewById(R.id.title);
         mBodyText = (EditText) findViewById(R.id.body);
         mRowId = (savedInstanceState == null) ? null : (Long) savedInstanceState.getSerializable(NotesDbAdapter.KEY_ROWID);
         if (mRowId == null) {
@@ -86,18 +87,29 @@ public class PopupScreen extends PopupActivity {
 
     private void saveState() {
         body = mBodyText.getText().toString();
-        title = body;
-        if (body.length() == 0) { // 내용을 입력 안했을때
+        title = mTitleText.getText().toString();
+
+        if (title.length() == 0 && body.length() == 0)  // 내용과 제목을 모두 입력 안했을때
             Toast.makeText(this, R.string.nobody, Toast.LENGTH_SHORT).show();
-        } else {
+
+        else if (title.length() == 0) {
             if (body.length() > 15) { // 내용이 15자 이상일 경우
                 title = body.substring(0, 15) + "...";
+                title = title.replaceAll("[\r\n]", ""); // 엔터값 제거
                 saveMemo();
             } else { // 내용이 15자 이하일 경우(StringIndexOutofBoundsException)
                 title = body;
+                title = title.replaceAll("[\r\n]", ""); // 엔터값 제거
                 saveMemo();
             }
         }
+
+        else if (body.length() == 0) {
+            body = title;
+            saveMemo();
+        }
+
+        else saveMemo();
     }
 
 }
